@@ -15,10 +15,10 @@ function Task (title, description, dueDate, priority, carpet) {
   this.carpet = carpet;
 }
 
+Task.prototype.checklist = [];
 Task.prototype.addCheckItem = function (item) {
   this.checklist.push(item);
 };
-Task.prototype.checklist = [];
 
 function createTask (title, description, dueDate, priority, carpet = 'default') {
   const newTask = new Task(title, description, dueDate, priority, carpet);
@@ -55,5 +55,14 @@ const filterTask = (function () {
   return { today, nextWeek, nextMonth, upComing, byPriority, byCarpet };
 })();
 
+const findTask = (title, dueDate, priority, carpet) => {
+  return taskChest.find((task => {
+    if (task.title === title && task.dueDate === dueDate && task.priority === priority && task.carpet === carpet) {
+      return true
+    }
+  }))
+}
+findTask('Chemestry Homework', '28/11/2024' ,'Important', 'School').addCheckItem('do something')
+
 console.log(taskChest);
-console.log(filterTask.nextWeek());
+// console.log(findTask('Chemestry Homework', '28/11/2024' ,'Important', 'School'));

@@ -1,1 +1,2 @@
-console.log('check adding Style');
+import './styles/reset.css'
+import './styles/style.css'

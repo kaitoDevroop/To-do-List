@@ -1,0 +1,11 @@
+body {
+  min-height: 100vh;
+  background-color: #f5f2f7;
+  color: #29344B;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+}
+
+.container-responsive {
+  display: grid;
+  grid-template-columns: fit-content(20%) minmax(min(50vw, 60%), 1fr);
+}
